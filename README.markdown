@@ -6,6 +6,10 @@ Read-Through: Queries like `User.find(:all, :conditions => ...)` will first look
 
 Write-Through: As objects are created, updated, and deleted, all of the caches are *automatically* kept up-to-date and coherent.
 
+For all those interested this GEM is a simplification of cache-money for use in Rails 3.x. By simplification I mean that not all the caching cases covered by cache-money are supported and will never be. For instance: NGCache will NOT support random indexes, that was a bad idea. It caused huge cache thrash. However, NGCache will support unique indexes, which makes sense.
+
+What we are aiming for is to solve the 80% problem, find by ID or find by unique index and provide class methods to cache and clear whatever instance method you want.
+
 ## Howto ##
 ### What kinds of queries are supported? ###
 
